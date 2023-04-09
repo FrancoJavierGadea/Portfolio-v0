@@ -1,6 +1,6 @@
 import styled, { useTheme } from "styled-components";
 
-import gargantua from "../assets/Gargantua.mp4";
+import gargantua from "../assets/Gargantua.webm";
 
 const StyledDiv = styled.div`
 
@@ -10,12 +10,12 @@ const StyledDiv = styled.div`
         left: 0;
         z-index: 0;
         width: 100%;
-        height: 100svh;
+        height: 100vh;
         object-fit: cover;
         object-position: 5% 10%;
     }
 
-    main {
+    .content {
         position: relative;
         z-index: 50;
     }
@@ -27,11 +27,11 @@ function Background({children}) {
     const theme = useTheme();
 
 
-    return (<StyledDiv>
+    return (<StyledDiv className="Background">
 
         {theme.isDark && <video src={gargantua} autoPlay muted loop />}
         
-        <main>{children}</main>
+        <div className="content">{children}</div>
 
     </StyledDiv>);
 }

@@ -16,21 +16,22 @@ const StyledDiv = styled.div`
         object-fit: scale-down;
         border-radius: 50%;
 
-        filter: ${({theme}) => theme.isDark ? 'var(--dark-filters)' : ''};
+        filter: ${({theme}) => theme.isDark ? 'var(--dark-filters)' : 'initial'};
 
-        backdrop-filter: drop-shadow(4px 4px 10px blue);
-        box-shadow: 0px 0px 7px #fffdff47;
+        backdrop-filter: ${({theme}) => theme.isDark ? 'drop-shadow(4px 4px 10px blue)' : 'contrast(0.7)'};
+
+        box-shadow: 0px 0px 7px ${({theme}) => theme.isDark ? '#fffdff47' : '#00000047'};
     }
 
     .name {
         text-align: center;
 
-        filter: ${({theme}) => theme.isDark ? 'var(--dark-filters)' : ''};
+        filter: ${({theme}) => theme.isDark ? 'var(--dark-filters)' : 'initial'};
     }
 
     p {
         font-size: 18px;
-        filter: ${({theme}) => theme.isDark ? 'var(--dark-filters)' : ''};
+        filter: ${({theme}) => theme.isDark ? 'var(--dark-filters)' : 'initial'};
     }
 `;
 

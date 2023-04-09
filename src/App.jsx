@@ -23,11 +23,13 @@ function App() {
 					<ThemeSwitch theme={theme} onChange={changeTheme} />
 				</Navigation>
 
-				<Home />
+				<main>
+					<Home />
 
-				<Projects />
+					<Projects />
 
-				<Footer />
+					<Footer />
+				</main>
 
 			</Background>
 		</ThemeProvider>
