@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { GH_API, USERNAME } from "../utils/github-api";
 import ProjectCard from "./ProjectCard";
 import styled from "styled-components";
+import useBreakPoints from "../hooks/useBreakpoints";
 
 
 const StyledDiv = styled.div`
@@ -16,6 +17,8 @@ const StyledDiv = styled.div`
 function Projects() {
 
     const [repositories, setRepositories] = useState(null);
+
+    const [isLG] = useBreakPoints('lg');
 
     useEffect(() => {
         
@@ -49,7 +52,7 @@ function Projects() {
 
     }, []);
 
-    return (<section className="container my-5" id="Proyectos">
+    return (<section className="container" id="Proyectos" style={{scrollMarginTop: isLG ? 100 : 200}}>
 
         <StyledDiv>
             <h2 className="py-2 mb-4 border-bottom border-2 border-primary">Proyectos</h2>

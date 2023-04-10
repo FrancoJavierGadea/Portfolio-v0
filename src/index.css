@@ -6,3 +6,7 @@
     
     --bs-body-bg: #000000;
 }
+
+section {
+    margin: 100px 0;
+}

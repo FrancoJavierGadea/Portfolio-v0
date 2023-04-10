@@ -3,6 +3,7 @@ import styled from "styled-components";
 import image from "../assets/perfil-2.png";
 import Redes from "./Redes";
 import { Col, Row } from "react-bootstrap";
+import useBreakPoints from "../hooks/useBreakpoints";
 
 const StyledDiv = styled.div`
 
@@ -37,8 +38,9 @@ const StyledDiv = styled.div`
 
 function Home() {
 
+    const [isLG] = useBreakPoints('lg');
 
-    return (<section className="my-5" id="Inicio" style={{scrollMarginTop: 100}}>
+    return (<section className="Inicio my-5" id="Inicio" style={{scrollMarginTop: isLG ? 100 : 200}}>
 
         <StyledDiv className="container">
 

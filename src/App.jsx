@@ -6,6 +6,7 @@ import useTheme from "./hooks/useTheme";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Background from "./components/Background";
+import Skills from "./components/Skills";
 
 
 
@@ -27,6 +28,8 @@ function App() {
 					<Home />
 
 					<Projects />
+
+					<Skills />
 
 					<Footer />
 				</main>

@@ -42,7 +42,7 @@ function ProjectCard({title, description, link, deploy, topics = [], image}) {
                         {
                             topics.map((value, i) => {
 
-                                return <Badge className="mx-1" key={`topic-${i}`}>{value}</Badge>
+                                return <Badge pill className="mx-1" key={`topic-${i}`}>{value}</Badge>
                             })
                         }
                     </div>

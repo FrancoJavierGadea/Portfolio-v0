@@ -2,6 +2,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
 import useBreakPoints from "../hooks/useBreakpoints";
 import Background from "./Background";
+import { useEffect, useState } from "react";
 
 
 const StyledNavbar = styled.div`
@@ -10,11 +11,11 @@ const StyledNavbar = styled.div`
     top: 0;
     width: 100%;
     z-index: 100;
-    //background-color: ${({theme}) => theme.isDark ? 'var(--bs-dark)' : 'var(--bs-light)'};
-
+    
     .Background {
         position: relative;
         overflow: hidden;
+        background-color: ${({theme}) => theme.isDark ? 'transparent' : 'var(--bs-body-bg)'};
     }
     .Background video {
         position: absolute;
@@ -24,6 +25,37 @@ const StyledNavbar = styled.div`
 function Navigation({children}) {
 
     const [isLG] = useBreakPoints('lg');
+
+    const [location, setLocation] = useState(undefined);
+
+    useEffect(() => {
+
+		const listener = () => {
+
+			if(window.location.hash){
+
+                console.log('1')
+
+                setLocation(undefined);
+
+				window.location.hash = '';
+			}
+		}
+		
+		document.addEventListener('wheel', listener);
+
+		return () => {
+
+			document.removeEventListener('wheel', listener);
+		}
+
+	}, []);
+
+
+    const handlerSelect = (value) => {
+
+        setLocation(value);
+    }
 
     return (<StyledNavbar>
         <Background>
@@ -38,12 +70,12 @@ function Navigation({children}) {
 
 
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
-                            <Nav.Link href="#Inicio">Inicio</Nav.Link>
+                        <Nav className="ms-auto" activeKey={location} onSelect={handlerSelect}>
+                            <Nav.Link href="#Inicio" eventKey="Inicio">Inicio</Nav.Link>
 
-                            <Nav.Link href="#Proyectos">Proyectos</Nav.Link>
+                            <Nav.Link href="#Proyectos" eventKey="Proyectos">Proyectos</Nav.Link>
 
-                            <Nav.Link href="#Skills">Skills</Nav.Link>  
+                            <Nav.Link href="#Tecnologias" eventKey="Tecnologias">Tecnologias</Nav.Link>  
                         </Nav>
                     </Navbar.Collapse>
     
