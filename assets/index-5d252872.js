@@ -87,7 +87,7 @@ Error generating stack: `+l.message+`
         position: relative;
         z-index: 50;
     }
-`;function Th({children:e}){const t=Op(),n=v.useRef();return v.useEffect(()=>{n.current&&(n.current.playbackRate=1.5)},[]),se(G1,{className:"Background",children:[t.isDark&&x("img",{className:"poster",src:t.isDark?uf:cf,alt:"Image de fondo"}),x("video",{className:"video",src:t.isDark?K1:Q1,poster:t.isDark?uf:cf,autoPlay:!0,muted:!0,loop:!0,ref:n}),x("div",{className:"content",children:e})]})}const Y1=jt.div`
+`;function Th({children:e}){const t=Op(),n=v.useRef();return v.useEffect(()=>{n.current&&(n.current.playbackRate=1.5)},[]),se(G1,{className:"Background",children:[x("img",{className:"poster",src:t.isDark?uf:cf,alt:"Image de fondo"}),x("video",{className:"video",src:t.isDark?K1:Q1,poster:t.isDark?uf:cf,autoPlay:!0,muted:!0,loop:!0,ref:n}),x("div",{className:"content",children:e})]})}const Y1=jt.div`
 
     position: sticky;
     top: 0;
