@@ -57,7 +57,7 @@ function Home() {
             <Row className="mt-3">
                 <Col xs={12} md={9}>
                     <p>
-                        Soy un <strong>desarrollador web Fullstack</strong> con habilidades en el <strong>frontend</strong> y el <strong>backend</strong>. 
+                        <strong>Desarrollador web Fullstack</strong> con habilidades en el <strong>frontend</strong> y el <strong>backend</strong>. 
                     </p>
 
                     <p>

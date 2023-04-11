@@ -8,6 +8,10 @@ const StyledDiv = styled.div`
 
     --dark-filters: brightness(130%) drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.6));
 
+    h2 {
+        filter: ${({theme}) => theme.isDark ? 'var(--dark-filters)' : ''};
+    }
+
     .Skill {
 
         margin: 10px;

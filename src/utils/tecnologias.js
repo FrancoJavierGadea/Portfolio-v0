@@ -7,6 +7,7 @@ import mongo from '../assets/icons/mongo.svg';
 import mysql from '../assets/icons/mysql.svg';
 import next from '../assets/icons/next.svg';
 import bootstrap from '../assets/icons/bootstrap.svg';
+import express from '../assets/icons/expressjs.svg';
 
 export const TECNOLOGIAS = [ 
     {
@@ -21,7 +22,11 @@ export const TECNOLOGIAS = [
 
     {
         name: 'JavaScript',
-        url: js
+        url: js,
+        styles: {
+            light: {backgroundColor: '#000'},
+            dark: {backgroundColor: '#000'}
+        }
     },
 
     {
@@ -32,6 +37,14 @@ export const TECNOLOGIAS = [
     {
         name: 'Next js',
         url: next,
+        styles: {
+            dark: {filter: 'invert(0.7)'}
+        }
+    },
+
+    {
+        name: 'Express',
+        url: express,
         styles: {
             dark: {filter: 'invert(0.7)'}
         }

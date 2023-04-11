@@ -49,7 +49,7 @@ const StyledSwitch = styled.div`
 function ThemeSwitch({theme = 'light', onChange = () => {}}) {
 
 
-    return (<StyledSwitch>
+    return (<StyledSwitch title={theme.mode === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}>
 
         <Form.Switch onChange={onChange} checked={theme.mode === 'light'} />
 

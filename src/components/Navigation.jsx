@@ -17,7 +17,10 @@ const StyledNavbar = styled.div`
         overflow: hidden;
         background-color: ${({theme}) => theme.isDark ? 'transparent' : 'var(--bs-body-bg)'};
     }
-    .Background video {
+    .Background .video {
+        position: absolute;
+    }
+    .Background .poster {
         position: absolute;
     }
 `;
@@ -33,8 +36,6 @@ function Navigation({children}) {
 		const listener = () => {
 
 			if(window.location.hash){
-
-                console.log('1')
 
                 setLocation(undefined);
 
